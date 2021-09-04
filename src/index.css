@@ -1,13 +1,190 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+body {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.holder {
+  background: #222222;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.holder-col1 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+h1 {
+  font-size: 5.3rem;
+  line-height: 100%;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: #f2f2f2;
+}
+h2 {
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 100%;
+
+  color: #f2f2f2;
+}
+.input {
+  width: 50%;
+  position: relative;
+  background: #2a2a2a;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: min-content;
+  margin-top: 4rem;
+}
+.floatIcn {
+  margin-left: -4rem;
+  cursor: pointer;
+}
+input {
+  background: #2a2a2a;
+  border-radius: 5px;
+  padding: 1.4rem;
+  width: 100%;
+
+  font-family: inherit;
+  outline: none;
+  color: #f2f2f2;
+}
+.holder-col2 {
+  width: 100%;
+
+  background-image: linear-gradient(
+      180deg,
+      rgba(42, 42, 42, 0.9) 0%,
+      rgba(42, 42, 42, 0.459) 100%
+    ),
+    url("../src/Pages/bg.png");
+  background-size: cover;
+}
+.holder2 {
+  background: #222222;
+  height: 100vh;
+}
+.holder-top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.small {
+  font-size: 2.9rem;
+}
+.input-home {
+  margin-top: 0;
+  width: 100%;
+}
+.serachbar {
+  width: 25%;
+}
+.holdercontent {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  padding: 3rem;
+}
+.usercard {
+  padding: 2rem;
+  background-blend-mode: soft-light, normal;
+  border-radius: 1rem;
+  background: linear-gradient(
+      318.96deg,
+      rgba(46, 46, 46, 0.4) -1.9%,
+      rgba(36, 36, 36, 0.4) 105%
+    ),
+    #343434;
+
+  width: 100%;
+}
+.usercard-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.usercard-top-img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+.usercard-top-personaldetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+  align-items: flex-start;
+}
+.name {
+  font-style: normal;
+  font-weight: 500;
+
+  line-height: 100%;
+  font-size: 2.1rem;
+  /* identical to box height */
+
+  color: #f2f2f2;
+}
+.bio {
+  font-style: normal;
+  font-weight: 300;
+
+  line-height: 150%;
+  font-size: 1.7rem;
+  /* identical to box height */
+  text-align: left;
+  margin-top: 0.5rem;
+  color: #f2f2f2be;
+}
+.usercard-stats {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.stats {
+  background: #333333;
+  padding: 1.8rem 2.6rem;
+}
+.status-head {
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  color: #838383;
+}
+.status-value {
+  font-size: 5rem;
+  font-weight: 500;
+  color: #727272;
+  color: #838383;
 }
