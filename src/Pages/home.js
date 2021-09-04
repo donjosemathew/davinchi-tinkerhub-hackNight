@@ -8,7 +8,7 @@ const Home = () => {
   const [data, setdata] = useState(false);
   const [data2, setdata2] = useState(false);
   function getFollowers() {
-    if (data2) {
+    if (data) {
       history.push(`/${data}`);
     }
 
