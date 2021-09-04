@@ -1,4 +1,7 @@
-<img src="./public/x2.png" height={100}>
+<img src="./public/x2.png" height={60}>
+<img src="./public/xa.png" height={60}>
+
+# GitTree
 
 # Getting Started with Create React App
 
