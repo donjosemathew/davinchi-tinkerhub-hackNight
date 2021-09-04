@@ -89,7 +89,7 @@ input {
 }
 .holder2 {
   background: #222222;
-  height: 100vh;
+  min-height: 100vh;
 }
 .holder-top {
   width: 100%;
@@ -113,6 +113,7 @@ input {
   display: grid;
   grid-template-columns: 0.35fr 0.65fr;
   padding: 3rem;
+  padding-top: 1rem;
 }
 .usercard {
   padding: 2rem;
@@ -187,4 +188,77 @@ input {
   font-weight: 500;
   color: #727272;
   color: #838383;
+}
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+.about-head {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #f2f2f2;
+  margin-left: 1rem;
+}
+.btn-card {
+  outline: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffc313;
+  justify-self: center;
+  font-family: inherit;
+  font-weight: 500;
+  align-self: center;
+  color: #f2f2f2;
+  width: 30%;
+  cursor: pointer;
+}
+.div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.right {
+  margin-left: 2rem;
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+.followcard {
+  height: min-content;
+  padding: 2rem;
+  background-blend-mode: soft-light, normal;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(
+      318.96deg,
+      rgba(46, 46, 46, 0.4) -1.9%,
+      rgba(36, 36, 36, 0.4) 105%
+    ),
+    #343434;
+}
+.follower-name {
+  color: #f2f2f2;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.followcard-image {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }

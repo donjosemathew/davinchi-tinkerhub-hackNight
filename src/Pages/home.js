@@ -1,6 +1,7 @@
 import { BsSearch } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+
 import axios from "axios";
 const Home = () => {
   let history = useHistory();
