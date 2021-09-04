@@ -10,6 +10,8 @@ const UserData = () => {
   const params = useParams();
   const [user, SetUserData] = useState(false);
   const [userfollow, Setuserfollow] = useState(false);
+  const [userfollowing, Setuserfollowing] = useState(false);
+  const [btn, SetBtn] = useState(1);
   function getFollowers() {
     axios.get(`https://api.github.com/users/${params.slug}`).then((res) => {
       const persons = res.data;
@@ -22,6 +24,16 @@ const UserData = () => {
       .then((res) => {
         const persons = res.data;
         Setuserfollow(persons);
+        getFollowingData();
+      });
+  }
+
+  function getFollowingData() {
+    axios
+      .get(`https://api.github.com/users/${params.slug}/following`)
+      .then((res) => {
+        const persons = res.data;
+        Setuserfollowing(persons);
         console.log(persons);
       });
   }
@@ -32,6 +44,7 @@ const UserData = () => {
   useEffect(() => {
     getFollowersData();
   }, [user]);
+
   return (
     <div className="holder2">
       <div className="holder-top">
@@ -39,7 +52,18 @@ const UserData = () => {
           <h1 className="small">GitTree</h1>
         </div>
         <div className="serachbar">
-          <input className="input-home" type="text" placeholder="Username" />
+          <button
+            className={btn === 1 ? "fl-btn fl-btn-c " : "fl-btn"}
+            onClick={() => SetBtn(1)}
+          >
+            Followers
+          </button>
+          <button
+            className={btn === 2 ? "fl-btn fl-btn-c " : "fl-btn"}
+            onClick={() => SetBtn(2)}
+          >
+            Following
+          </button>
         </div>
       </div>
       <div className="holdercontent">
@@ -77,41 +101,63 @@ const UserData = () => {
               <IoIosBusiness color="#fff" size="2em" />
               <p className="about-head">Location:{user.location}</p>
             </div>
-            <div className="div">
-              <button className="btn-card">
-                CONNECT
-                <IoMdHeart color="#fff" size="2em" />
-              </button>
-            </div>
           </div>
         ) : (
           <CircularProgress color="secondary" />
         )}
 
         <div className="right">
-          {userfollow
-            ? userfollow.map((item) => (
-                <div className="followcard">
-                  <img
-                    src={item.avatar_url}
-                    alt=""
-                    className="followcard-image"
-                  />
-                  <p className="follower-name">{item.login}</p>
-                  <div className="div">
-                    <button
-                      className="btn-card"
-                      style={{
-                        borderRadius: 3,
-                        width: "20%",
-                      }}
-                      onClick={() => history.push(`/${item.login}`)}
-                    >
-                      <IoMdHeart color="#fff" size="2em" />
-                    </button>
+          {btn === 1
+            ? userfollow
+              ? userfollow.map((item) => (
+                  <div className="followcard">
+                    <img
+                      src={item.avatar_url}
+                      alt=""
+                      className="followcard-image"
+                    />
+                    <p className="follower-name">{item.login}</p>
+                    <div className="div">
+                      <button
+                        className="btn-card"
+                        style={{
+                          borderRadius: 3,
+                          width: "20%",
+                        }}
+                        onClick={() => history.push(`/${item.login}`)}
+                      >
+                        <IoMdHeart color="#fff" size="2em" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))
+                ))
+              : null
+            : null}
+          {btn === 2
+            ? userfollowing
+              ? userfollowing.map((item) => (
+                  <div className="followcard">
+                    <img
+                      src={item.avatar_url}
+                      alt=""
+                      className="followcard-image"
+                    />
+                    <p className="follower-name">{item.login}</p>
+                    <div className="div">
+                      <button
+                        className="btn-card"
+                        style={{
+                          borderRadius: 3,
+                          width: "20%",
+                        }}
+                        onClick={() => history.push(`/${item.login}`)}
+                      >
+                        <IoMdHeart color="#fff" size="2em" />
+                      </button>
+                    </div>
+                  </div>
+                ))
+              : null
             : null}
         </div>
       </div>

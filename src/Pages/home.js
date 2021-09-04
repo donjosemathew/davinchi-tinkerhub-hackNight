@@ -36,6 +36,15 @@ const Home = () => {
             onClick={() => getFollowers()}
           />
         </div>
+        <h2
+          style={{
+            fontSize: "1.5rem",
+            marginTop: "2rem",
+          }}
+        >
+          {" "}
+          eg :dontech09,Gokul-GMenon,Hari2k02
+        </h2>
       </div>
       <div className="holder-col2">s</div>
     </div>
